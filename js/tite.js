@@ -1,35 +1,33 @@
 titlebar(0);
 var rev = "fwd";
-function titlebar(val){
-    var msg  = "selfharm.lol";
+
+function titlebar(val) {
+    var msg = "selfharm.lol";
     var res = "selfharm.lol ";
     var speed = 70;
     var pos = val;
-    msg = "   -|-"+msg+"-|-";
+    msg = "   -|-" + msg + "-|-";
     var le = msg.length;
-    if(rev == "fwd"){
-        if(pos < le){
-            pos = pos+1;
-            scroll = msg.substr(0,pos);
+    if (rev == "fwd") {
+        if (pos < le) {
+            pos = pos + 1;
+            scroll = msg.substr(0, pos);
             document.title = scroll;
-            timer = window.setTimeout("titlebar("+pos+")",speed);
-        }
-        else {
+            timer = window.setTimeout("titlebar(" + pos + ")", speed);
+        } else {
             rev = "bwd";
-            timer = window.setTimeout("titlebar("+pos+")",speed);
+            timer = window.setTimeout("titlebar(" + pos + ")", speed);
         }
-    }
-    else {
-        if(pos > 0) {
-            pos = pos-1;
-            var ale = le-pos;
-            scrol = msg.substr(ale,le);
+    } else {
+        if (pos > 0) {
+            pos = pos - 1;
+            var ale = le - pos;
+            scrol = msg.substr(ale, le);
             document.title = scrol;
-            timer = window.setTimeout("titlebar("+pos+")",speed);
-        }
-        else {
+            timer = window.setTimeout("titlebar(" + pos + ")", speed);
+        } else {
             rev = "fwd";
-            timer = window.setTimeout("titlebar("+pos+")",speed);
+            timer = window.setTimeout("titlebar(" + pos + ")", speed);
         }
     }
 }
